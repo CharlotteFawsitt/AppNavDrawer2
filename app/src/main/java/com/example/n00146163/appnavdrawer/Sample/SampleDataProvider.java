@@ -14,12 +14,12 @@ import java.util.Map;
 
 public class SampleDataProvider {
 
-    public static List<Patient> dataItemList;
-    public static Map<String, Patient> dataItemMap;
+    public static List<Patient> patientList;
+    public static Map<String, Patient> patientMap;
 
     static {
-        dataItemList = new ArrayList<>();
-        dataItemMap = new HashMap<>();
+        patientList = new ArrayList<>();
+        patientMap = new HashMap<>();
 
         addItem(new Patient(null, "John", "Male", "0865342516", "12/05/2018 12.45"));
         addItem(new Patient(null, "Frank", "Male", "0865342516", "12/05/2018 12.45"));
@@ -31,7 +31,7 @@ public class SampleDataProvider {
     }
 
     private static void addItem(Patient patient) {
-        dataItemList.add(patient);
-        dataItemMap.put(patient.getPatientId(), patient);
+        patientList.add(patient);
+        patientMap.put(patient.getPatientId(), patient);
     }
 }

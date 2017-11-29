@@ -1,6 +1,8 @@
 package com.example.n00146163.appnavdrawer;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,16 +16,28 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.n00146163.appnavdrawer.Model.Patient;
+import com.example.n00146163.appnavdrawer.database.DBHelper;
+import com.example.n00146163.appnavdrawer.database.DataSource;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+        DataSource mDataSource;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mDataSource = new DataSource(this);
+        mDataSource.open();
+
+        Toast.makeText(this, "Database acquired", Toast.LENGTH_SHORT).show();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -47,6 +61,18 @@ public class MainActivity extends AppCompatActivity
 
 
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mDataSource.close();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mDataSource.open();
     }
 
     @Override
@@ -88,9 +114,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.log_in) {
-            // Handle the camera action
-        } else if (id == R.id.PatientList) {
-
+        } else if (id == R.id.PatientList){
             Intent intent = new Intent(this, PatientListActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
