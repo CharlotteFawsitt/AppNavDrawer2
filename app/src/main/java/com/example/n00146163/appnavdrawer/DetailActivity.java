@@ -108,6 +108,10 @@ public class DetailActivity extends AppCompatActivity {
             Intent intent = new Intent(this, DeleteActivity.class);
             intent.putExtra(PatientAdapter.PATIENT_KEY, patient);
             startActivity(intent);
+            finish();
+        }
+        else{
+            onBackPressed();
         }
         return true;
     }

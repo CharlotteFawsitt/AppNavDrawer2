@@ -1,5 +1,6 @@
 package com.example.n00146163.appnavdrawer.Sample;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -82,6 +83,8 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
                 intent.putExtra(PATIENT_ID_KEY, patient);
                 intent.putExtra("id", pid);
                 mContext.startActivity(intent);
+////                v.finish();
+//                ((Activity)mContext).finish();
             }
         });
 

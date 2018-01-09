@@ -70,6 +70,9 @@ public class PatientListActivity extends AppCompatActivity{
             Intent intent = new Intent(this, addActivity.class);
             startActivity(intent);
         }
+        else{
+            onBackPressed();
+        }
             return true;
     }
     @Override
@@ -82,6 +85,13 @@ public class PatientListActivity extends AppCompatActivity{
     protected void onResume() {
         super.onResume();
         mDataSource.open();
+
+        List<Patient> listFromDB = mDataSource.getAllPatients();
+
+        PatientAdapter adapter = new PatientAdapter(this, listFromDB);
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rvItems);
+        recyclerView.setAdapter(adapter);
     }
 
 }
