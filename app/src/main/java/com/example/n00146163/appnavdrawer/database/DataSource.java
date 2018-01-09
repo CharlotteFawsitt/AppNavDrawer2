@@ -119,7 +119,6 @@ public class DataSource {
     }
 
     public void deletePatient(Patient patient) {
-        ContentValues values = patient.toValues();
         mDatabase.delete(PatientsTable.TABLE_PATIENTS,"PatientId = ?", new String[] {patient.getPatientId()});
     }
 
