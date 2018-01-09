@@ -1,6 +1,7 @@
 package com.example.n00146163.appnavdrawer.Sample;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.n00146163.appnavdrawer.DetailActivity;
 import com.example.n00146163.appnavdrawer.Model.Patient;
 import com.example.n00146163.appnavdrawer.R;
 
@@ -18,17 +20,22 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import static android.support.design.R.styleable.RecyclerView;
+
 /**
  * Created by n00146163 on 21/11/2017.
  */
 
 public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHolder> {
 
-    private List<Patient> mItems;
+    public static final String PATIENT_ID_KEY = "patient_id_key";
+    public static final String PATIENT_KEY = "patient_key" ;
+    private String pid;
+    private List<Patient> mPatients;
     private Context mContext;
-    public PatientAdapter(Context context, List<Patient> items) {
+    public PatientAdapter(Context context, List<Patient> patients) {
         this.mContext = context;
-        this.mItems = items;
+        this.mPatients = patients;
     }
 
 
@@ -48,12 +55,13 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
 
         // mItems is the array list of dogs, position is the current position required
         // get method returns the complete Dog object
-        final Patient item = mItems.get(position);
+        final Patient patient = mPatients.get(position);
 
+        pid = patient.getPatientId();
         Log.d("log", "patient adapter bindVH");
 
         try {
-            holder.tvName.setText(item.getName());
+            holder.tvName.setText(patient.getName());
 //            String imageFile = item.getPhoto();
 //            InputStream inputStream = mContext.getAssets().open(imageFile);
 //            Drawable d = Drawable.createFromStream(inputStream, null);
@@ -67,16 +75,30 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "You selected " + item.getName(),
-                        Toast.LENGTH_SHORT).show();
+
+               // String patientId = patient.getPatientId();
+                Intent intent = new Intent(mContext, DetailActivity.class);
+                intent.putExtra(PATIENT_KEY, patient);
+                intent.putExtra(PATIENT_ID_KEY, patient);
+                intent.putExtra("id", pid);
+                mContext.startActivity(intent);
             }
         });
+
+//        holder.mView.setOnLongClickListener(new View.OnLongClickListener(){
+//            @Override
+//            public boolean onLongClick(View view) {
+//                Toast.makeText(mContext, "You held " + patient.getName(),
+//                        Toast.LENGTH_SHORT).show();
+//                return false;
+//            }
+//        });
 
     }
 
     @Override
     public int getItemCount() {
-        return mItems.size();
+        return mPatients.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

@@ -28,6 +28,20 @@ public class SampleDataProvider {
         addItem(new Patient(null, "Mark", "Male", "0865342516", "12/05/2018 12.45"));
         addItem(new Patient(null, "Dean", "Male", "0865342516", "12/05/2018 12.45"));
         addItem(new Patient(null, "Sam", "Male", "0865342516", "12/05/2018 12.45"));
+        addItem(new Patient(null, "John", "Male", "0865342516", "12/05/2018 12.45"));
+        addItem(new Patient(null, "Frank", "Male", "0865342516", "12/05/2018 12.45"));
+        addItem(new Patient(null, "James", "Male", "0865342516", "12/05/2018 12.45"));
+        addItem(new Patient(null, "Jeremy", "Male", "0865342516", "12/05/2018 12.45"));
+        addItem(new Patient(null, "Mark", "Male", "0865342516", "12/05/2018 12.45"));
+        addItem(new Patient(null, "Dean", "Male", "0865342516", "12/05/2018 12.45"));
+        addItem(new Patient(null, "Sam", "Male", "0865342516", "12/05/2018 12.45"));
+        addItem(new Patient(null, "John", "Male", "0865342516", "12/05/2018 12.45"));
+        addItem(new Patient(null, "Frank", "Male", "0865342516", "12/05/2018 12.45"));
+        addItem(new Patient(null, "James", "Male", "0865342516", "12/05/2018 12.45"));
+        addItem(new Patient(null, "Jeremy", "Male", "0865342516", "12/05/2018 12.45"));
+        addItem(new Patient(null, "Mark", "Male", "0865342516", "12/05/2018 12.45"));
+        addItem(new Patient(null, "Dean", "Male", "0865342516", "12/05/2018 12.45"));
+        addItem(new Patient(null, "Sam", "Male", "0865342516", "12/05/2018 12.45"));
     }
 
     private static void addItem(Patient patient) {

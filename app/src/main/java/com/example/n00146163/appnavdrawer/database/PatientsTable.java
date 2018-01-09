@@ -12,6 +12,10 @@ public class PatientsTable {
     public static final String COLUMN_PHONENUMBER = "phoneNumber";
     public static final String COLUMN_NEXT_APP = "nextApp";
 
+    public static final String[] ALL_COLUMNS =
+            {COLUMN_ID, COLUMN_NAME, COLUMN_GENDER,
+                    COLUMN_PHONENUMBER, COLUMN_NEXT_APP};
+
     public static final String SQL_CREATE =
             "CREATE TABLE " + TABLE_PATIENTS + "(" +
                     COLUMN_ID + " TEXT PRIMARY KEY," +

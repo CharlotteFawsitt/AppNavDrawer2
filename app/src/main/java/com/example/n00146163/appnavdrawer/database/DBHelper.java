@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DB_FILE_NAME = "hospital.db";
-    public static final int DB_VERSION = 1;
+    public static final int DB_VERSION = 2;
     public DBHelper(Context context) {
         super(context, DB_FILE_NAME, null, DB_VERSION);
     }
@@ -27,4 +27,5 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(PatientsTable.SQL_DELETE);
         onCreate(sqLiteDatabase);
     }
+
 }

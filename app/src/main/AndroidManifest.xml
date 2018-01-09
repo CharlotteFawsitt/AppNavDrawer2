@@ -19,13 +19,36 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PatientListActivity"
+
+        <activity android:name=".addActivity"
+            android:parentActivityName=".PatientListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.n00146163.appnavdrawer.PatientListActivity" />
+
+        </activity>
+
+        <activity android:name=".DetailActivity"
+            android:parentActivityName=".PatientListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.n00146163.appnavdrawer.PatientListActivity" />
+
+        </activity>
+
+        <activity
+            android:name=".PatientListActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.example.n00146163.appnavdrawer.MainActivity" />
+        </activity>
+        <activity android:name=".DeleteActivity">
 
         </activity>
+
+
+
     </application>
 
 </manifest>

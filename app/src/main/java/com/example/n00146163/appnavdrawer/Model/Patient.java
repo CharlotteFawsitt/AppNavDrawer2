@@ -1,6 +1,8 @@
 package com.example.n00146163.appnavdrawer.Model;
 
 import android.content.ContentValues;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.example.n00146163.appnavdrawer.database.PatientsTable;
 
@@ -11,7 +13,7 @@ import java.util.UUID;
  * Created by n00146163 on 21/11/2017.
  */
 
-public class Patient {
+public class Patient implements Parcelable {
     private String patientId;
     private String name;
     private String gender;
@@ -104,6 +106,8 @@ public class Patient {
                 '}';
     }
 
+
+
     public ContentValues toValues(){
         ContentValues values = new ContentValues(5);
 
@@ -117,5 +121,37 @@ public class Patient {
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.patientId);
+        dest.writeString(this.name);
+        dest.writeString(this.gender);
+        dest.writeString(this.phoneNumber);
+        dest.writeString(this.nextApp);
+        dest.writeString(this.photo);
+    }
+
+    protected Patient(Parcel in) {
+        this.patientId = in.readString();
+        this.name = in.readString();
+        this.gender = in.readString();
+        this.phoneNumber = in.readString();
+        this.nextApp = in.readString();
+        this.photo = in.readString();
+    }
+
+    public static final Parcelable.Creator<Patient> CREATOR = new Parcelable.Creator<Patient>() {
+        public Patient createFromParcel(Parcel source) {
+            return new Patient(source);
+        }
+
+        public Patient[] newArray(int size) {
+            return new Patient[size];
+        }
+    };
 }
