@@ -21,27 +21,27 @@ public class SampleDataProvider {
         patientList = new ArrayList<>();
         patientMap = new HashMap<>();
 
-        addItem(new Patient(null, "John", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "Frank", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "James", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "Jeremy", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "Mark", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "Dean", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "Sam", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "John", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "Frank", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "James", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "Jeremy", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "Mark", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "Dean", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "Sam", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "John", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "Frank", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "James", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "Jeremy", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "Mark", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "Dean", "Male", "0865342516", "12/05/2018 12.45"));
-        addItem(new Patient(null, "Sam", "Male", "0865342516", "12/05/2018 12.45"));
+        addItem(new Patient(null, "John", "Male", "0865342516", "12/05/2018 12.45", "ic_hosp_image.png"));
+        addItem(new Patient(null, "Frank", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "James", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "Jeremy", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "Mark", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "Dean", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "Sam", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "John", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "Frank", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "James", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "Jeremy", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "Mark", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "Dean", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "Sam", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "John", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "Frank", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "James", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "Jeremy", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "Mark", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "Dean", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
+        addItem(new Patient(null, "Sam", "Male", "0865342516", "12/05/2018 12.45", "ic_hospital.xml"));
     }
 
     private static void addItem(Patient patient) {

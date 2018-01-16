@@ -73,17 +73,17 @@ public class DetailActivity extends AppCompatActivity {
         tvPatientName = (TextView) findViewById(R.id.tvPatientName);
         tvAge = (TextView) findViewById(R.id.tvAge);
         tvGender = (TextView) findViewById(R.id.tvGender);
-        //itemImage = (ImageView) findViewById(R.id.itemImage);
+        itemImage = (ImageView) findViewById(R.id.patientImage);
 
         tvPatientName.setText(patient.getName());
         tvGender.setText(patient.getGender());
         tvAge.setText(patient.getPhoneNumber());
         InputStream inputStream = null;
         try {
-//            String imageFile = patient.getPhoto();
-//            inputStream = getAssets().open(imageFile);
-//            Drawable d = Drawable.createFromStream(inputStream, null);
-//            itemImage.setImageDrawable(d);
+            String imageFile = patient.getPhoto();
+            inputStream = getAssets().open(imageFile);
+            Drawable d = Drawable.createFromStream(inputStream, null);
+            itemImage.setImageDrawable(d);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

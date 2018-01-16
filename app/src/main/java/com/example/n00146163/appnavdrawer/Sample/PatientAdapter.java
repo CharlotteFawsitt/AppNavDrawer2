@@ -63,10 +63,10 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
 
         try {
             holder.tvName.setText(patient.getName());
-//            String imageFile = item.getPhoto();
-//            InputStream inputStream = mContext.getAssets().open(imageFile);
-//            Drawable d = Drawable.createFromStream(inputStream, null);
-//            holder.imageView.setImageDrawable(d);
+            String imageFile = patient.getPhoto();
+            InputStream inputStream = mContext.getAssets().open(imageFile);
+            Drawable d = Drawable.createFromStream(inputStream, null);
+            holder.imageView.setImageDrawable(d);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -83,8 +83,6 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
                 intent.putExtra(PATIENT_ID_KEY, patient);
                 intent.putExtra("id", pid);
                 mContext.startActivity(intent);
-////                v.finish();
-//                ((Activity)mContext).finish();
             }
         });
 
@@ -114,7 +112,7 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
             super(itemView);
 
             tvName = (TextView) itemView.findViewById(R.id.itemNameText);
-            imageView = (ImageView) itemView.findViewById(R.id.imageView);
+            imageView = (ImageView) itemView.findViewById(R.id.patientImage);
             mView = itemView;
         }
     }

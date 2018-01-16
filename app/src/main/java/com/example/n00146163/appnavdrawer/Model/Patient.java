@@ -25,7 +25,7 @@ public class Patient implements Parcelable {
     public Patient() {
     }
 
-    public Patient (String pId, String n, String g, String pN, String nA) {
+    public Patient (String pId, String n, String g, String pN, String nA, String photo) {
 
         if(pId == null){
             pId = UUID.randomUUID().toString();
@@ -35,6 +35,7 @@ public class Patient implements Parcelable {
         this.gender = g;
         this.phoneNumber = pN;
         this.nextApp = nA;
+        this.photo = photo;
     }
 
     public String getPhoto() {
