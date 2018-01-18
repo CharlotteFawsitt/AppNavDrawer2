@@ -11,10 +11,11 @@ public class PatientsTable {
     public static final String COLUMN_GENDER = "gender";
     public static final String COLUMN_PHONENUMBER = "phoneNumber";
     public static final String COLUMN_NEXT_APP = "nextApp";
+    public static final String COLUMN_PHOTO = "photo";
 
     public static final String[] ALL_COLUMNS =
             {COLUMN_ID, COLUMN_NAME, COLUMN_GENDER,
-                    COLUMN_PHONENUMBER, COLUMN_NEXT_APP};
+                    COLUMN_PHONENUMBER, COLUMN_NEXT_APP, COLUMN_PHOTO};
 
     public static final String SQL_CREATE =
             "CREATE TABLE " + TABLE_PATIENTS + "(" +
@@ -22,7 +23,8 @@ public class PatientsTable {
                     COLUMN_NAME + " TEXT," +
                     COLUMN_GENDER + " TEXT," +
                     COLUMN_PHONENUMBER + " TEXT," +
-                    COLUMN_NEXT_APP + " TEXT" + ");";
+                    COLUMN_NEXT_APP + " TEXT," +
+                    COLUMN_PHOTO + " TEXT" + ");";
 
     public static final String SQL_DELETE =
             "DROP TABLE " + TABLE_PATIENTS;

@@ -81,6 +81,8 @@ public class DataSource {
                     cursor.getColumnIndex(PatientsTable.COLUMN_PHONENUMBER)));
             patient.setNextApp(cursor.getString(
                     cursor.getColumnIndex(PatientsTable.COLUMN_NEXT_APP)));
+            patient.setPhoto(cursor.getString(
+                    cursor.getColumnIndex(PatientsTable.COLUMN_PHOTO)));
 
             patientList.add(patient);
         }
@@ -108,6 +110,7 @@ public class DataSource {
         contentValues.put(PatientsTable.COLUMN_GENDER, gender);
         contentValues.put(PatientsTable.COLUMN_PHONENUMBER, phoneNumber);
         contentValues.put(PatientsTable.COLUMN_NEXT_APP, nextApp);
+        contentValues.put(PatientsTable.COLUMN_PHOTO, "ic_hosp_image.png");
 
         long result = mDatabase.insert(PatientsTable.TABLE_PATIENTS, null, contentValues);
 

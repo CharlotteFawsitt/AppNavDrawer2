@@ -5,7 +5,7 @@
 //import android.widget.Toast;
 //
 //import com.example.n00146163.appnavdrawer.Model.Patient;
-//import com.example.n00146163.appnavdrawer.Sample.PatientAdapter;
+//import com.example.n00146163.appnavdrawer.PatientAdapter;
 //import com.example.n00146163.appnavdrawer.Sample.SampleDataProvider;
 //
 //public class DetailActivity extends AppCompatActivity {
@@ -37,21 +37,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.n00146163.appnavdrawer.Model.Patient;
-import com.example.n00146163.appnavdrawer.Sample.PatientAdapter;
-import com.example.n00146163.appnavdrawer.Sample.SampleDataProvider;
 import com.example.n00146163.appnavdrawer.database.DataSource;
 
 import java.io.InputStream;
-import java.text.NumberFormat;
-import java.util.Locale;
 
 public class DetailActivity extends AppCompatActivity {
 
     private TextView tvPatientName, tvGender, tvAge;
-    private ImageView itemImage;
+    ImageView itemImage;
     private String pid;
     private Patient patient;
 
@@ -73,7 +68,7 @@ public class DetailActivity extends AppCompatActivity {
         tvPatientName = (TextView) findViewById(R.id.tvPatientName);
         tvAge = (TextView) findViewById(R.id.tvAge);
         tvGender = (TextView) findViewById(R.id.tvGender);
-        itemImage = (ImageView) findViewById(R.id.patientImage);
+        itemImage = (ImageView) findViewById(R.id.Image);
 
         tvPatientName.setText(patient.getName());
         tvGender.setText(patient.getGender());

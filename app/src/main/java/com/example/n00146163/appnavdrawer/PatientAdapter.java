@@ -1,6 +1,5 @@
-package com.example.n00146163.appnavdrawer.Sample;
+package com.example.n00146163.appnavdrawer;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -11,17 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.n00146163.appnavdrawer.DetailActivity;
 import com.example.n00146163.appnavdrawer.Model.Patient;
-import com.example.n00146163.appnavdrawer.R;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-
-import static android.support.design.R.styleable.RecyclerView;
 
 /**
  * Created by n00146163 on 21/11/2017.
@@ -31,7 +24,6 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
 
     public static final String PATIENT_ID_KEY = "patient_id_key";
     public static final String PATIENT_KEY = "patient_key" ;
-    private String pid;
     private List<Patient> mPatients;
     private Context mContext;
     public PatientAdapter(Context context, List<Patient> patients) {
@@ -58,7 +50,6 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
         // get method returns the complete Dog object
         final Patient patient = mPatients.get(position);
 
-        pid = patient.getPatientId();
         Log.d("log", "patient adapter bindVH");
 
         try {
@@ -81,7 +72,6 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
                 Intent intent = new Intent(mContext, DetailActivity.class);
                 intent.putExtra(PATIENT_KEY, patient);
                 intent.putExtra(PATIENT_ID_KEY, patient);
-                intent.putExtra("id", pid);
                 mContext.startActivity(intent);
             }
         });
@@ -102,7 +92,7 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
         return mPatients.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView tvName;
         public ImageView imageView;
@@ -112,7 +102,7 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
             super(itemView);
 
             tvName = (TextView) itemView.findViewById(R.id.itemNameText);
-            imageView = (ImageView) itemView.findViewById(R.id.patientImage);
+            imageView = (ImageView) itemView.findViewById(R.id.tvPatientImage);
             mView = itemView;
         }
     }

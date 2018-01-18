@@ -1,26 +1,16 @@
 package com.example.n00146163.appnavdrawer;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteException;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.n00146163.appnavdrawer.Model.Patient;
-import com.example.n00146163.appnavdrawer.Sample.PatientAdapter;
 import com.example.n00146163.appnavdrawer.Sample.SampleDataProvider;
 import com.example.n00146163.appnavdrawer.database.DataSource;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class PatientListActivity extends AppCompatActivity{

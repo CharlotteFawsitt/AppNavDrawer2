@@ -117,6 +117,7 @@ public class Patient implements Parcelable {
         values.put(PatientsTable.COLUMN_GENDER, gender);
         values.put(PatientsTable.COLUMN_PHONENUMBER, phoneNumber);
         values.put(PatientsTable.COLUMN_NEXT_APP, nextApp);
+        values.put(PatientsTable.COLUMN_PHOTO, photo);
 
         return values;
     }
