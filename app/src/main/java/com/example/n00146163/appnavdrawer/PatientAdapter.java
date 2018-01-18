@@ -55,6 +55,7 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
         try {
             holder.tvName.setText(patient.getName());
             String imageFile = patient.getPhoto();
+            Log.i("TEST", "Image Path" + imageFile);
             InputStream inputStream = mContext.getAssets().open(imageFile);
             Drawable d = Drawable.createFromStream(inputStream, null);
             holder.imageView.setImageDrawable(d);

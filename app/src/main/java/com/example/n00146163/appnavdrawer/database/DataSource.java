@@ -98,7 +98,7 @@ public class DataSource {
         return result;
     }
 
-    public boolean insertPatient(String name, String gender, String phoneNumber, String nextApp) {
+    public boolean insertPatient(String name, String gender, String phoneNumber, String nextApp, String photo) {
 
         ContentValues contentValues = new ContentValues();
         String pId = null;
@@ -110,7 +110,7 @@ public class DataSource {
         contentValues.put(PatientsTable.COLUMN_GENDER, gender);
         contentValues.put(PatientsTable.COLUMN_PHONENUMBER, phoneNumber);
         contentValues.put(PatientsTable.COLUMN_NEXT_APP, nextApp);
-        contentValues.put(PatientsTable.COLUMN_PHOTO, "ic_hosp_image.png");
+        contentValues.put(PatientsTable.COLUMN_PHOTO, photo);
 
         long result = mDatabase.insert(PatientsTable.TABLE_PATIENTS, null, contentValues);
 
